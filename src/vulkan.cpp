@@ -663,8 +663,8 @@ void Renderer::setup()
 		m_tonemapPipelineLayout = createPipelineLayout(&pipelineDescriptorSetLayouts);
 		m_tonemapPipeline = createGraphicsPipeline(
 			1,
-			"data/shaders/glsl/tonemap_vs.glsl",
-			"data/shaders/glsl/tonemap_fs.glsl",
+			"data/shaders/spirv/tonemap_vs.spv",
+			"data/shaders/spirv/tonemap_fs.spv",
 			m_tonemapPipelineLayout);
 	}
 
@@ -730,8 +730,8 @@ void Renderer::setup()
 
 		m_pbrPipeline = createGraphicsPipeline(
 			0,
-			"data/shaders/glsl/pbr_vs.glsl",
-			"data/shaders/glsl/pbr_fs.glsl",
+			"data/shaders/spirv/pbr_vs.spv",
+			"data/shaders/spirv/pbr_fs.spv",
 			m_pbrPipelineLayout,
 			&vertexInputBindings,
 			&vertexAttributes,
@@ -784,8 +784,8 @@ void Renderer::setup()
 		depthStencilState.depthTestEnable = VK_FALSE;
 
 		m_skyboxPipeline = createGraphicsPipeline(0,
-			"data/shaders/glsl/skybox_vs.glsl",
-			"data/shaders/glsl/skybox_fs.glsl",
+			"data/shaders/spirv/skybox_vs.spv",
+			"data/shaders/spirv/skybox_fs.spv",
 			m_skyboxPipelineLayout,
 			&vertexInputBindings,
 			&vertexAttributes,
@@ -806,7 +806,7 @@ void Renderer::setup()
 
 		// Load & convert equirectangular envuronment map to cubemap texture
 		{
-			VkPipeline pipeline = createComputePipeline("data/shaders/glsl/equirect2cube_cs.glsl", computePipelineLayout);
+			VkPipeline pipeline = createComputePipeline("data/shaders/spirv/equirect2cube_cs.spv", computePipelineLayout);
 
 			Texture envTextureEquirect = createTexture(Image::fromFile("data/HDR_111_Parking_Lot_2_Ref.hdr"), VK_FORMAT_R32G32B32A32_SFLOAT, 1);
 			
@@ -845,7 +845,7 @@ void Renderer::setup()
 				const uint32_t specializationData[] = { numMipTailLevels };
 
 				const VkSpecializationInfo specializationInfo = { 1, &specializationMap, sizeof(specializationData), specializationData };
-				pipeline = createComputePipeline("data/shaders/glsl/spmap_cs.glsl", computePipelineLayout, &specializationInfo);
+				pipeline = createComputePipeline("data/shaders/spirv/spmap_cs.spv", computePipelineLayout, &specializationInfo);
 			}
 
 			VkCommandBuffer commandBuffer = beginImmediateCommandBuffer();
@@ -916,7 +916,7 @@ void Renderer::setup()
 
 		// Compute diffuse irradiance cubemap
 		{
-			VkPipeline pipeline = createComputePipeline("data/shaders/glsl/irmap_cs.glsl", computePipelineLayout);
+			VkPipeline pipeline = createComputePipeline("data/shaders/spirv/irmap_cs.spv", computePipelineLayout);
 
 			const VkDescriptorImageInfo inputTexture  = { VK_NULL_HANDLE, m_envTexture.view, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL };
 			const VkDescriptorImageInfo outputTexture = { VK_NULL_HANDLE, m_irmapTexture.view, VK_IMAGE_LAYOUT_GENERAL };
@@ -941,7 +941,7 @@ void Renderer::setup()
 		
 		// Compute Cook-Torrance BRDF 2D LUT for split-sum approximation.
 		{
-			VkPipeline pipeline = createComputePipeline("data/shaders/glsl/spbrdf_cs.glsl", computePipelineLayout);
+			VkPipeline pipeline = createComputePipeline("data/shaders/spirv/spbrdf_cs.spv", computePipelineLayout);
 			
 			const VkDescriptorImageInfo outputTexture = { VK_NULL_HANDLE, m_spBRDF_LUT.view, VK_IMAGE_LAYOUT_GENERAL };
 			updateDescriptorSet(computeDescriptorSet, Binding_OutputTexture, VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, { outputTexture });

@@ -14,10 +14,10 @@
       <UniqueIdentifier>{10443a30-f2e6-41b3-babd-4bcd61464cad}</UniqueIdentifier>
     </Filter>
     <Filter Include="shaders\glsl">
-      <UniqueIdentifier>{758360b6-204a-487f-b2c8-d295ce61a883}</UniqueIdentifier>
+      <UniqueIdentifier>{bf766555-8f84-4229-b64e-34a384ea2d65}</UniqueIdentifier>
     </Filter>
-    <Filter Include="shaders\hlsl">
-      <UniqueIdentifier>{7a2a99b0-3eea-4e60-9927-5fc99dc0c4ef}</UniqueIdentifier>
+    <Filter Include="shaders\spirv">
+      <UniqueIdentifier>{3eca331c-72bf-4ce3-8caf-84f02c9a15f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -80,70 +80,68 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md" />
-    <None Include="..\..\data\shaders\hlsl\pbr.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\equirect2cube_cs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\tonemap.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\irmap_cs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\skybox.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\pbr_fs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\equirect2cube.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\pbr_vs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\spmap.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\skybox_fs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\irmap.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\skybox_vs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\spbrdf.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\spbrdf_cs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\debug.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\spmap_cs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\downsample.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\tonemap_fs.glsl">
+      <Filter>shaders\glsl</Filter>
     </None>
-    <None Include="..\..\data\shaders\hlsl\downsample_array.hlsl">
-      <Filter>shaders\hlsl</Filter>
+    <None Include="data\shaders\glsl\tonemap_vs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </None>
+    <None Include="data\shaders\spirv\equirect2cube_cs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\irmap_cs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\pbr_fs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\pbr_vs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\skybox_fs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\skybox_vs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\spbrdf_cs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\spmap_cs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\tonemap_fs.spv">
+      <Filter>shaders\spirv</Filter>
+    </None>
+    <None Include="data\shaders\spirv\tonemap_vs.spv">
+      <Filter>shaders\spirv</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\COPYING.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_fs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\skybox_vs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\skybox_fs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\equirect2cube_cs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\spmap_cs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\irmap_cs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\spbrdf_cs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\pbr_vs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\pbr_fs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_vs.glsl">
-      <Filter>shaders\glsl</Filter>
-    </CustomBuild>
   </ItemGroup>
 </Project>

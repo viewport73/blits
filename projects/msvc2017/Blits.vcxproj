@@ -33,110 +33,30 @@
     <ClInclude Include="..\..\src\vulkan.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\..\data\shaders\glsl\equirect2cube_cs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\irmap_cs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\pbr_fs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\pbr_vs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\skybox_fs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\skybox_vs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\spbrdf_cs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\spmap_cs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_vs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
-    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_fs.glsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
-    </CustomBuild>
     <None Include="..\..\README.md" />
+    <None Include="data\shaders\glsl\equirect2cube_cs.glsl" />
+    <None Include="data\shaders\glsl\irmap_cs.glsl" />
+    <None Include="data\shaders\glsl\pbr_fs.glsl" />
+    <None Include="data\shaders\glsl\pbr_vs.glsl" />
+    <None Include="data\shaders\glsl\skybox_fs.glsl" />
+    <None Include="data\shaders\glsl\skybox_vs.glsl" />
+    <None Include="data\shaders\glsl\spbrdf_cs.glsl" />
+    <None Include="data\shaders\glsl\spmap_cs.glsl" />
+    <None Include="data\shaders\glsl\tonemap_fs.glsl" />
+    <None Include="data\shaders\glsl\tonemap_vs.glsl" />
+    <None Include="data\shaders\spirv\equirect2cube_cs.spv" />
+    <None Include="data\shaders\spirv\irmap_cs.spv" />
+    <None Include="data\shaders\spirv\pbr_fs.spv" />
+    <None Include="data\shaders\spirv\pbr_vs.spv" />
+    <None Include="data\shaders\spirv\skybox_fs.spv" />
+    <None Include="data\shaders\spirv\skybox_vs.spv" />
+    <None Include="data\shaders\spirv\spbrdf_cs.spv" />
+    <None Include="data\shaders\spirv\spmap_cs.spv" />
+    <None Include="data\shaders\spirv\tonemap_fs.spv" />
+    <None Include="data\shaders\spirv\tonemap_vs.spv" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\COPYING.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\pbr.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\tonemap.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\skybox.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\equirect2cube.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\spmap.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\irmap.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\spbrdf.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\debug.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\downsample.hlsl">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\data\shaders\hlsl\downsample_array.hlsl">
-      <FileType>Document</FileType>
-    </None>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -210,7 +130,7 @@ if not exist %ROOTDIR%\data\shaders\spirv mkdir %ROOTDIR%\data\shaders\spirv
 </Command>
     </PreBuildEvent>
     <CustomBuild>
-      <Command>$(VULKAN_SDK)\Bin\glslangValidator.exe -V -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command>$(VULKAN_SDK)\Bin\glslangValidator.exe -V -o $(SolutionDir)data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
       <Message>
       </Message>
       <Outputs>$(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv;%(Outputs)</Outputs>

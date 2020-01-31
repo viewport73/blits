@@ -142,7 +142,7 @@ void Renderer::setup()
 		compileShader("data/shaders/glsl/tonemap_fs.glsl", GL_FRAGMENT_SHADER)
 	});
 
-	m_skybox = createMeshBuffer(Mesh::fromFile("data/model/skybox.obj"));
+	m_skybox = createMeshBuffer(Mesh::fromFile("data/model/skybox/skybox.obj"));
 	m_skyboxProgram = linkProgram({
 		compileShader("data/shaders/glsl/skybox_vs.glsl", GL_VERTEX_SHADER),
 		compileShader("data/shaders/glsl/skybox_fs.glsl", GL_FRAGMENT_SHADER)
