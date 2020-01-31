@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\glad\src\glad.c" />
+    <ClCompile Include="..\..\lib\stb\src\libstb.c" />
+    <ClCompile Include="..\..\lib\volk\src\volk.c" />
+    <ClCompile Include="..\..\src\common\application.cpp" />
+    <ClCompile Include="..\..\src\common\image.cpp" />
+    <ClCompile Include="..\..\src\common\main.cpp" />
+    <ClCompile Include="..\..\src\common\mesh.cpp" />
+    <ClCompile Include="..\..\src\common\optimus.cpp" />
+    <ClCompile Include="..\..\src\common\utils.cpp" />
+    <ClCompile Include="..\..\src\opengl.cpp" />
+    <ClCompile Include="..\..\src\vulkan.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\common\application.hpp" />
+    <ClInclude Include="..\..\src\common\renderer.hpp" />
+    <ClInclude Include="..\..\src\common\image.hpp" />
+    <ClInclude Include="..\..\src\common\mesh.hpp" />
+    <ClInclude Include="..\..\src\common\utils.hpp" />
+    <ClInclude Include="..\..\src\opengl.hpp" />
+    <ClInclude Include="..\..\src\vulkan.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\data\shaders\glsl\equirect2cube_cs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\irmap_cs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\pbr_fs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\pbr_vs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\skybox_fs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\skybox_vs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\spbrdf_cs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\spmap_cs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S comp -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_vs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S vert -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_fs.glsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(VULKAN_SDK)\Bin\glslangValidator.exe -V -S frag -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+    </CustomBuild>
+    <None Include="..\..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\COPYING.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\pbr.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\tonemap.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\skybox.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\equirect2cube.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\spmap.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\irmap.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\spbrdf.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\debug.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\downsample.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\data\shaders\hlsl\downsample_array.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7F6DC88B-FFAA-4C17-BAAC-DFEA91BAA2D3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Blits</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ProjectName>Blits</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;NOMINMAX;GLFW_INCLUDE_NONE;GLM_ENABLE_EXPERIMENTAL;ENABLE_OPENGL;ENABLE_VULKAN;ENABLE_D3D11;ENABLE_D3D12;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\lib\glfw\include;$(ProjectDir)\..\..\lib\glad\include;$(ProjectDir)\..\..\lib\glm\include;$(ProjectDir)\..\..\lib\stb\include;$(ProjectDir)\..\..\lib\assimp\include;$(ProjectDir)\..\..\lib\d3dx12;$(ProjectDir)\..\..\lib\volk\include;$(VULKAN_SDK)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\lib\glfw\win64;$(ProjectDir)\..\..\lib\assimp\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3dll.lib;assimp.lib;d3d11.lib;d3d12.lib;d3dcompiler.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>set ROOTDIR=$(SolutionDir)..\..
+copy /y $(TargetPath) %ROOTDIR%\data
+copy /y %ROOTDIR%\lib\assimp\win64\assimp.dll %ROOTDIR%\data
+copy /y %ROOTDIR%\lib\glfw\win64\glfw3.dll %ROOTDIR%\data
+</Command>
+      <Message>Deploy binaries to data directory</Message>
+    </PostBuildEvent>
+    <CustomBuildStep />
+    <PreBuildEvent>
+      <Command>set ROOTDIR=$(SolutionDir)..\..
+if not exist %ROOTDIR%\data mkdir %ROOTDIR%\data
+if not exist %ROOTDIR%\data\shaders mkdir %ROOTDIR%\data\shaders
+if not exist %ROOTDIR%\data\shaders\spirv mkdir %ROOTDIR%\data\shaders\spirv
+</Command>
+    </PreBuildEvent>
+    <CustomBuild>
+      <Command>$(VULKAN_SDK)\Bin\glslangValidator.exe -V -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Message>
+      </Message>
+      <Outputs>$(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv;%(Outputs)</Outputs>
+      <LinkObjects>false</LinkObjects>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;NOMINMAX;GLFW_INCLUDE_NONE;GLM_ENABLE_EXPERIMENTAL;ENABLE_OPENGL;ENABLE_VULKAN;ENABLE_D3D11;ENABLE_D3D12;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\lib\glfw\include;$(ProjectDir)\..\..\lib\glad\include;$(ProjectDir)\..\..\lib\glm\include;$(ProjectDir)\..\..\lib\stb\include;$(ProjectDir)\..\..\lib\assimp\include;$(ProjectDir)\..\..\lib\d3dx12;$(ProjectDir)\..\..\lib\volk\include;$(VULKAN_SDK)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\lib\glfw\win64;$(ProjectDir)\..\..\lib\assimp\win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3dll.lib;assimp.lib;d3d11.lib;d3d12.lib;d3dcompiler.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>set ROOTDIR=$(SolutionDir)..\..
+copy /y $(TargetPath) %ROOTDIR%\data
+copy /y %ROOTDIR%\lib\assimp\win64\assimp.dll %ROOTDIR%\data
+copy /y %ROOTDIR%\lib\glfw\win64\glfw3.dll %ROOTDIR%\data
+</Command>
+      <Message>Deploy binaries to data directory</Message>
+    </PostBuildEvent>
+    <CustomBuildStep />
+    <PreBuildEvent>
+      <Command>set ROOTDIR=$(SolutionDir)..\..
+if not exist %ROOTDIR%\data mkdir %ROOTDIR%\data
+if not exist %ROOTDIR%\data\shaders mkdir %ROOTDIR%\data\shaders
+if not exist %ROOTDIR%\data\shaders\spirv mkdir %ROOTDIR%\data\shaders\spirv
+</Command>
+    </PreBuildEvent>
+    <CustomBuild>
+      <Command>$(VULKAN_SDK)\Bin\glslangValidator.exe -V -o $(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv %(FullPath)</Command>
+      <Message>
+      </Message>
+      <Outputs>$(SolutionDir)..\..\data\shaders\spirv\%(Filename).spv;%(Outputs)</Outputs>
+      <LinkObjects>false</LinkObjects>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

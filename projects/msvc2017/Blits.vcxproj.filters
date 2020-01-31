@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4e25b2bf-70c6-4f6b-96b0-410fffa1e5d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{f7f73fd6-c9d1-4ff0-a526-8f6a481379a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib">
+      <UniqueIdentifier>{df0f1f33-1fda-40c0-9c3a-ced8e92affb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{10443a30-f2e6-41b3-babd-4bcd61464cad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\glsl">
+      <UniqueIdentifier>{758360b6-204a-487f-b2c8-d295ce61a883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\hlsl">
+      <UniqueIdentifier>{7a2a99b0-3eea-4e60-9927-5fc99dc0c4ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\opengl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\glad\src\glad.c">
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\mesh.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\utils.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\stb\src\libstb.c">
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\image.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\application.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\main.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\vulkan.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\volk\src\volk.c">
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\optimus.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\opengl.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\common\mesh.hpp">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\common\utils.hpp">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\common\image.hpp">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\common\renderer.hpp">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\common\application.hpp">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\vulkan.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" />
+    <None Include="..\..\data\shaders\hlsl\pbr.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\tonemap.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\skybox.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\equirect2cube.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\spmap.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\irmap.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\spbrdf.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\debug.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\downsample.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+    <None Include="..\..\data\shaders\hlsl\downsample_array.hlsl">
+      <Filter>shaders\hlsl</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\COPYING.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_fs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\skybox_vs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\skybox_fs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\equirect2cube_cs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\spmap_cs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\irmap_cs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\spbrdf_cs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\pbr_vs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\pbr_fs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\data\shaders\glsl\tonemap_vs.glsl">
+      <Filter>shaders\glsl</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
