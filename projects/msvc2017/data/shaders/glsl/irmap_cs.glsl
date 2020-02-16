@@ -1,6 +1,6 @@
 #version 450 core
 // Physically Based Rendering
-// Copyright (c) 2017-2018 Michał Siejak
+// Copyright (c) 2019 Pramod S
 
 // Computes diffuse irradiance cubemap convolution for image-based lighting.
 // Uses quasi Monte Carlo sampling with Hammersley sequence.

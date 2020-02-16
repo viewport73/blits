@@ -1,6 +1,6 @@
 /*
  * Physically Based Rendering
- * Copyright (c) 2017-2018 Michał Siejak
+ * Copyright (c) 2019 Pramod S
  */
 
 #if !(defined(ENABLE_OPENGL) || defined(ENABLE_VULKAN) || defined(ENABLE_D3D11) || defined(ENABLE_D3D12))

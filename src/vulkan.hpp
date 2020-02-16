@@ -1,6 +1,6 @@
 ﻿/*
  * Physically Based Rendering
- * Copyright (c) 2017-2018 Michał Siejak
+ * Copyright (c) 2019 Pramod S
  *
  * Vulkan 1.0 renderer.
  */
